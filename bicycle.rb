@@ -27,7 +27,7 @@ class Bicycle
 end
 bike = Bicycle.new
 exit = false
-while !exit
+until exit
   puts bike.toString
   puts "Enter 0 to exit, 1 to speed up, 2 to keep going"
   case gets.strip

@@ -1,0 +1,78 @@
+# A subpar kana -> ramaji converter without katakana, voicing, most subscript characters, spacing, wa vs. ha detection, and punctuation.
+# Mostly made to get familiar w/ regex/gsub
+puts "Enter some kana to be converted:"
+ramaji = gets.strip
+pre_table = {
+  "きゃ" => "kya",
+  "きゅ" => "kyu",
+  "きょ" => "kyo",
+  "しゃ" => "sha",
+  "しゅ" => "shu",
+  "しょ" => "sho",
+  "ちゃ" => "cha",
+  "ちゅ" => "chu",
+  "ちょ" => "cho",
+  "にゃ" => "nya",
+  "にゅ" => "nyu",
+  "にょ" => "nyo",
+  "ひゃ" => "hya",
+  "ひゅ" => "hyu",
+  "ひょ" => "hyo",
+  "みゃ" => "mya",
+  "みゅ" => "myu",
+  "みょ" => "myo",
+  "りゃ" => "rya",
+  "りゅ" => "ryu",
+  "りょ" => "ryo"
+}
+table = {
+  "あ" => "a",
+  "い" => "i",
+  "う" => "u",
+  "え" => "e",
+  "お" => "o",
+  "か" => "ka",
+  "き" => "ki",
+  "く" => "ku",
+  "け" => "ke",
+  "こ" => "ko",
+  "さ" => "sa",
+  "し" => "shi",
+  "す" => "su",
+  "せ" => "se",
+  "そ" => "so",
+  "た" => "ta",
+  "ち" => "chi",
+  "つ" => "tsu",
+  "て" => "te",
+  "と" => "to",
+  "な" => "na",
+  "に" => "ni",
+  "ぬ" => "nu",
+  "ね" => "ne",
+  "の" => "no",
+  "は" => "ha", # 「wa」も
+  "ひ" => "hi",
+  "ふ" => "fu",
+  "へ" => "he",
+  "ほ" => "ho",
+  "ま" => "ma",
+  "み" => "mi",
+  "む" => "mu",
+  "め" => "me",
+  "も" => "mo",
+  "や" => "ya",
+  "ゆ" => "yu",
+  "よ" => "yo",
+  "ら" => "ra",
+  "り" => "ri",
+  "る" => "ru",
+  "れ" => "re",
+  "ろ" => "ro",
+  "わ" => "wa",
+  "を" => "wo",
+  "ん" => "n"
+}
+puts pre_table["きゃ"]
+ramaji.gsub!(/[きちひみりにし][ゃょゅ]/, pre_table)
+puts ramaji.gsub(/[#{ table.keys.join("") }]/, table)
