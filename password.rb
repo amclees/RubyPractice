@@ -1,9 +1,12 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require 'securerandom'
 
 puts 'Enter length:'
 length = gets.chomp.to_i
+
+strength = Math.log(94**length, 2)
+puts "Bit strength will be #{strength}"
 
 puts 'How many to output?'
 n = gets.chomp.to_i
