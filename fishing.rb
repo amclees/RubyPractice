@@ -2,7 +2,7 @@ require "open-uri"
 
 puts "Type in the place where you want to go fishing (i.e. http://<fishing spot>, ./<fishing spot>, etc.)"
 spot = gets.strip
-spot = "./fishing-spots/los-angeles" if spot.empty?
+spot = "./fishing_spots/los_angeles" if spot.empty?
 puts "Enter a 1 if you want to see where you didn't find fish (not recommended for webpages)"
 show_failures = gets.strip == "1"
 fish = 0
