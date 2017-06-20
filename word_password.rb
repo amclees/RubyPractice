@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 # Generates a password from an 80k word English dictionary with a random number of random words.
 
