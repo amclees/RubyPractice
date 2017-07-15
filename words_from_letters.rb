@@ -24,7 +24,6 @@ end
 
 puts 'Made using all or some letters:'
 words = []
-combinations = []
 (1..input.length).each do |combination_size|
   input.chars.combination(combination_size).each do |combination|
     joined = combination.join('')
