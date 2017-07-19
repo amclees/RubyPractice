@@ -1,8 +1,7 @@
-
 # frozen_string_literal: true
 
 def merge_sort(array)
-  return array if array.length <= 1
+  return array if array.length == 1 || array.length.zero?
   half = array.length / 2
   merge(merge_sort(array.slice(0, half)), merge_sort(array.slice(half, array.length)))
 end
