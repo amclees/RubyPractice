@@ -15,13 +15,6 @@ map = JSON.parse(json)
 puts 'Enter some letters:'
 input = gets.chomp.downcase.chars.uniq.sort.join('')
 
-puts 'Made using all letters:'
-if map.key?(input)
-  puts map[input].each_with_index.map { |word, index| "#{index + 1}. #{word}" }.join("\n")
-else
-  puts 'No matching word'
-end
-
 puts 'Made using all or some letters:'
 words = []
 (1..input.length).each do |combination_size|
@@ -31,4 +24,11 @@ words = []
   end
 end
 
-puts words.sort_by(&:length).reverse.each_with_index.map { |word, index| "#{index + 1}. #{word}" }.join("\n")
+puts words.sort_by(&:length).each_with_index.map { |word, index| "#{words.length - index}. #{word}" }.join("\n")
+
+puts 'Made using all letters:'
+if map.key?(input)
+  puts map[input].each_with_index.map { |word, index| "#{index + 1}. #{word}" }.join("\n")
+else
+  puts 'No matching word'
+end
